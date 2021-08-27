@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "About"
-description: "你的博客描述 " 
+description: "一个因为作者记性太差而准备的笔记站" 
 header-img: "img/green.jpg"
 ---
 
