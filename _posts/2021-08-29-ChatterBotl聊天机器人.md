@@ -20,13 +20,16 @@ description: 诶嘿～
 3. 知识推理  
    这个是更高一层的要求，系统应该可以通过上下文，或者接收到的句子的语义，通过知识推理的手段获取到知识库中不存在的答案。  
 ---  
+
 ## 可用技术栈
 基于以上几点，可用基于现有的一些算法来训练自己的模型，也可用通过开源的框架来搭建。这里我采用的是基于开源框架ChatterBot来实现的方法  
 ### 基于ChatterBot实现  
 ChatterBot 是一个功能强大的，基于 Python 的聊天机器人框架  
 其 GitHub 地址为：<https://github.com/gunthercox/ChatterBot/tree/master>   
-官方文档为：<https://chatterbot.readthedocs.io>    
+官方文档为：<https://chatterbot.readthedocs.io>  
+
 ---   
+
 ## 实战
 ### 1.获取语料
 中文聊天语料这一块，我选择了网上大神整理的资料，这里附上github链接：  
