@@ -9,6 +9,8 @@ description: 诶嘿～
 
 # 基于ChatterBot的聊天机器人  
 > 前言：因为作者太无聊了所以想做个自动问答系统来消遣时间~~才不是没朋友~~，也就是常说的聊天机器人  
+
+
 ---  
 ## 关键点  
 1. 句意理解  
@@ -31,11 +33,17 @@ ChatterBot 是一个功能强大的，基于 Python 的聊天机器人框架
 <https://github.com/codemayq/chinese_chatbot_corpus>   
 其中语料的使用大神有写了详尽的文档，务必仔细阅读后使用。  
 > 这里笔者遇到了一个比较奇怪的问题，使用pycharm运行文档里的main.py可以顺利进行语料转换，然而直接使用命令行会报错，暂时不清楚原理  
+
+
 ### 2.使用Google Colab训练  
 1. 上传语料到Colab  
 > 这里我采用的是将下载到的语料上传到Google Drive，然后挂载Google Drive硬盘到Colab来调用  
+
+
 > 注意：请务必选择GPU硬件加速以加快训练速度，否则训练时间过长可能导致异常退出  
-2. 在Colab上安装ChatterBot  
+
+
+1. 在Colab上安装ChatterBot  
 ```
 !pip install chatterbot                //注意：感叹号是必须的
 !pip isntall chatterbot-corpus         //注意：感叹号是必须的  
@@ -58,4 +66,6 @@ print(data[:100])
 trainer.train(data)
 ```  
 > 这一步根据语料的数据量大小时间有长有短，使用GPU硬件加速能大幅缩短训练时间  
+
+
 等待训练完成后，记得将生成的db.sqlite3文件下载到本地  
