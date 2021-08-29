@@ -62,7 +62,7 @@ trainer = ListTrainer(chatbot)
 4. 载入语料  
 
 ```
-with open('weibo.tsv', encoding='utf-8') as f:
+with open('xiaohuangji.tsv', encoding='utf-8') as f:
   data = f.read().replace('\t', '\n')
 print(data[:100])
 ```  
