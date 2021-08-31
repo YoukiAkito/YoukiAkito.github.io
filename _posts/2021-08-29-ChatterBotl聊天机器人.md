@@ -59,7 +59,7 @@ trainer = ListTrainer(chatbot)
 ```  
 4. 载入语料  
 ```
-with open('xiaohuangji.tsv', encoding='utf-8') as f:
+with open('chatterbot.tsv', encoding='utf-8') as f:
   data = f.read().replace('\t', '\n')
 print(data[:100])
 ```  
@@ -67,7 +67,7 @@ print(data[:100])
  ```
 trainer.train(data)
 ```  
-> 这一步根据语料的数据量大小时间有长有短，使用GPU硬件加速能大幅缩短训练时间  
+> 这一步根据语料的数据量大小时间有长有短，个人测试为了不超过Colab的使用限制，尽量选择较小的语料库或者拆分为多个语料库多次训练比较好
 
 
 等待训练完成后，记得将生成的db.sqlite3文件下载到本地  
