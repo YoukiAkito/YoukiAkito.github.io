@@ -1,3 +1,12 @@
+---
+layout: post
+title: 使用Anaconda部署ChatterBot到云服务器
+date: 2021-9-01
+categories: blog
+tags: [Anaconda,ChatterBot,学习笔记]
+description: 诶嘿～
+---   
+
 # 部署训练好的ChatterBot机器人到云服务器
 ## 1.安装ChatterBot
 首先，进入Anaconda环境  
