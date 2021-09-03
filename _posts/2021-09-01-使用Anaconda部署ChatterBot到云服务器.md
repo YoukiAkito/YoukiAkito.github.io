@@ -3,7 +3,7 @@ layout: post
 title: 使用Anaconda部署ChatterBot到云服务器
 date: 2021-9-01
 categories: blog
-tags: [Anaconda,ChatterBot,学习笔记]
+tags: [Anaconda,ChatterBot]
 description: 诶嘿～
 ---   
 
