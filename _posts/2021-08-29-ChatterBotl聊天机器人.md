@@ -3,7 +3,7 @@ layout: post
 title: ChatterBot聊天机器人
 date: 2021-8-28
 categories: blog
-tags: [python,机器学习]
+tags: [python,ChatterBot,机器学习]
 description: 诶嘿～
 ---    
 
