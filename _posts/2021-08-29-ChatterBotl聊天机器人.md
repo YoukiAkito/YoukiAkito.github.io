@@ -47,13 +47,13 @@ ChatterBot 是一个功能强大的，基于 Python 的聊天机器人框架
 
 1. 在Colab上安装ChatterBot  
 ```
-!pip3 install chatterbot                //注意：感叹号是必须的
-!pip3 install chatterbot-corpus         //注意：感叹号是必须的  
+!pip3 install chatterbot                #注意：感叹号是必须的
+!pip3 install chatterbot-corpus         #注意：感叹号是必须的  
 ```  
 3. 创建一个ChatBot  
 ```
 from chatterbot import ChatBot
-from chatterbot.trainrs import ListTrainer
+from chatterbot.trainers import ListTrainer
 chatbot = ChatBot("susu")
 trainer = ListTrainer(chatbot) 
 ```  
