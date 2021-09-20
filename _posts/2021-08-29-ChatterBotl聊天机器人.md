@@ -41,8 +41,6 @@ ChatterBot 是一个功能强大的，基于 Python 的聊天机器人框架
 ### 2.使用Google Colab训练  
 1. 上传语料到Colab  
 > 这里我采用的是将下载到的语料上传到Google Drive，然后挂载Google Drive硬盘到Colab来调用  
->
-> 注意：请务必选择GPU硬件加速以加快训练速度，否则训练时间过长可能导致异常退出  
 
 
 1. 在Colab上安装ChatterBot  
