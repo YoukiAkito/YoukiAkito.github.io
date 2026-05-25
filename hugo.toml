@@ -1,0 +1,40 @@
+baseURL = "https://YoukiAkito.github.io/"
+languageCode = "zh-CN"
+defaultContentLanguage = "zh"
+title = "YoukiAkito 的博客"
+theme = ""
+enableRobotsTXT = true
+enableEmoji = true
+hasCJKLanguage = true
+
+[params]
+  author = "YoukiAkito"
+  description = "记录思考，分享所见"
+  keywords = ["博客", "技术", "生活"]
+  showReadingTime = true
+  showDate = true
+
+[menu]
+  [[menu.main]]
+    name = "首页"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "文章"
+    url = "/posts/"
+    weight = 2
+  [[menu.main]]
+    name = "关于"
+    url = "/about/"
+    weight = 3
+
+[pagination]
+  pagerSize = 10
+
+[markup]
+  [markup.highlight]
+    style = "github"
+    lineNos = false
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

@@ -1,0 +1,10 @@
+<header class="site-header">
+  <div class="container">
+    <a href="{{ "/" | absURL }}" class="site-title">{{ .Site.Title }}</a>
+    <nav class="site-nav">
+      {{ range .Site.Menus.main }}
+      <a href="{{ .URL }}" class="{{ if eq $.RelPermalink .URL }}active{{ end }}">{{ .Name }}</a>
+      {{ end }}
+    </nav>
+  </div>
+</header>

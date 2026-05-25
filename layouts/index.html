@@ -1,0 +1,27 @@
+{{ define "main" }}
+<div class="home">
+  <section class="hero">
+    <h1>{{ .Site.Title }}</h1>
+    <p class="tagline">{{ .Site.Params.description }}</p>
+  </section>
+
+  <section class="posts-list">
+    <h2 class="section-title">近期文章</h2>
+    {{ $posts := where .Site.RegularPages "Section" "posts" }}
+    {{ range first 10 ($posts.ByDate.Reverse) }}
+    <article class="post-item">
+      <div class="post-meta">
+        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006年01月02日" }}</time>
+        {{ with .Params.tags }}
+          {{ range . }}<span class="tag">{{ . }}</span>{{ end }}
+        {{ end }}
+      </div>
+      <h3 class="post-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+      {{ with .Summary }}<p class="post-summary">{{ . }}</p>{{ end }}
+    </article>
+    {{ else }}
+    <p class="empty-tip">还没有文章，快来写第一篇吧！</p>
+    {{ end }}
+  </section>
+</div>
+{{ end }}
