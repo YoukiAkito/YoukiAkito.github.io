@@ -2,7 +2,6 @@ baseURL = "https://YoukiAkito.github.io/"
 languageCode = "zh-CN"
 defaultContentLanguage = "zh"
 title = "YoukiAkito 的博客"
-theme = ""
 enableRobotsTXT = true
 enableEmoji = true
 hasCJKLanguage = true
