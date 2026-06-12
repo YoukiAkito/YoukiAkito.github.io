@@ -1,0 +1,10 @@
+name = "Paper Reading"
+license = "MIT"
+description = "日系纸张阅读风格 Hugo 主题"
+homepage = ""
+tags = ["blog", "responsive", "hugo"]
+features = ["blog", "posts"]
+min_version = "0.112.0"
+
+[author]
+  name = "YoukiAkito"

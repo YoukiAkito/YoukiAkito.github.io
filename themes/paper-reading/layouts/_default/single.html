@@ -1,0 +1,24 @@
+{{ define "main" }}
+<article class="single-post">
+  <header class="post-header">
+    <h1 class="post-title">{{ .Title }}</h1>
+    <div class="post-meta">
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006年01月02日" }}</time>
+      {{ if .Site.Params.showReadingTime }}
+      · <span>{{ .ReadingTime }} 分钟阅读</span>
+      {{ end }}
+      {{ with .Params.tags }}
+      · {{ range . }}<a href="{{ "/tags/" | absURL }}{{ . | urlize }}" class="tag">{{ . }}</a>{{ end }}
+      {{ end }}
+    </div>
+  </header>
+
+  <div class="post-content">
+    {{ .Content }}
+  </div>
+
+  <footer class="post-footer">
+    <a href="{{ "/posts/" | absURL }}" class="back-link">← 返回文章列表</a>
+  </footer>
+</article>
+{{ end }}

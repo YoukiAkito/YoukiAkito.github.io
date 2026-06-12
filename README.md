@@ -21,6 +21,23 @@ hugo server -D
 
 访问 [http://localhost:1313](http://localhost:1313) 预览效果。
 
+### 切换主题
+
+项目内置两个 Hugo 主题：
+
+- `card-home`：卡片式个人主页风格
+- `paper-reading`：日系纸张阅读风格
+
+在 `hugo.toml` 中修改 `theme` 即可切换：
+
+```toml
+theme = "card-home"
+# 或
+theme = "paper-reading"
+```
+
+两个主题都内置 `Light / Dark` 明暗模式按钮，访问页面后可在顶部导航内直接切换。浏览器会记住上次选择的模式。
+
 ### 写新文章
 
 在 `content/posts/` 目录下创建 Markdown 文件：
@@ -55,9 +72,9 @@ blog/
 ├── content/
 │   ├── posts/        # 博客文章
 │   └── about/        # 关于页面
-├── layouts/          # HTML 模板
-├── static/
-│   └── css/style.css # 样式文件
+├── themes/
+│   ├── card-home/    # 卡片式个人主页主题
+│   └── paper-reading/ # 日系纸张阅读主题
 └── hugo.toml         # 配置文件
 ```
 

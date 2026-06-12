@@ -5,6 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} · {{ .Site.Title }}{{ end }}</title>
   <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}" />
+  <script>
+    (function () {
+      var savedMode = "light";
+      try {
+        savedMode = localStorage.getItem("color-mode") || "light";
+      } catch (error) {}
+      savedMode = savedMode === "dark" ? "dark" : "light";
+      document.documentElement.setAttribute("data-color-mode", savedMode);
+    })();
+  </script>
   <link rel="stylesheet" href="{{ "css/style.css" | absURL }}" />
   {{ if .Site.Params.showReadingTime }}{{ end }}
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✏️</text></svg>">
@@ -15,5 +25,6 @@
     {{ block "main" . }}{{ end }}
   </main>
   {{ partial "footer.html" . }}
+  <script src="{{ "js/color-mode.js" | absURL }}"></script>
 </body>
 </html>
