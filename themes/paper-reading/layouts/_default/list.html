@@ -1,19 +1,37 @@
 {{ define "main" }}
-<div class="post-list-page">
-  <h1 class="page-title">全部文章</h1>
-  {{ range .Pages.ByDate.Reverse }}
-  <article class="post-item">
-    <div class="post-meta">
-      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006年01月02日" }}</time>
-      {{ with .Params.tags }}
-        {{ range . }}<span class="tag">{{ . }}</span>{{ end }}
-      {{ end }}
+<div class="post-list-layout">
+  {{ $posts := .Pages.ByDate.Reverse }}
+  {{ if $posts }}
+  <aside class="post-list-toc" aria-label="文章列表目录">
+    <div class="post-list-toc-inner">
+      <div class="post-list-toc-title">文章目录</div>
+      <nav>
+        <ol>
+          {{ range $posts }}
+          <li><a href="#post-{{ .RelPermalink | anchorize }}">{{ .Title }}</a></li>
+          {{ end }}
+        </ol>
+      </nav>
     </div>
-    <h2 class="post-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-    {{ with .Summary }}<p class="post-summary">{{ . }}</p>{{ end }}
-  </article>
-  {{ else }}
-  <p class="empty-tip">暂无文章。</p>
+  </aside>
   {{ end }}
+
+  <div class="post-list-page">
+    <h1 class="page-title">全部文章</h1>
+    {{ range $posts }}
+    <article class="post-item" id="post-{{ .RelPermalink | anchorize }}">
+      <div class="post-meta">
+        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006年01月02日" }}</time>
+        {{ with .Params.tags }}
+          {{ range . }}<span class="tag">{{ . }}</span>{{ end }}
+        {{ end }}
+      </div>
+      <h2 class="post-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+      {{ with .Summary }}<p class="post-summary">{{ . }}</p>{{ end }}
+    </article>
+    {{ else }}
+    <p class="empty-tip">暂无文章。</p>
+    {{ end }}
+  </div>
 </div>
 {{ end }}

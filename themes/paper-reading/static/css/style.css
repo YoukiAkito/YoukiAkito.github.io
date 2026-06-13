@@ -308,6 +308,74 @@ body:has(.post-layout) .site-header .container {
   transform: translateX(2px);
 }
 
+body:has(.post-list-layout) main.container,
+body:has(.post-list-layout) .site-header .container {
+  max-width: 1080px;
+}
+
+.post-list-layout {
+  display: grid;
+  grid-template-columns: 210px minmax(0, var(--max-width));
+  gap: 2.2rem;
+  align-items: start;
+  justify-content: center;
+}
+
+.post-list-layout .post-item {
+  scroll-margin-top: 6rem;
+}
+
+.post-list-toc {
+  position: sticky;
+  top: 6rem;
+}
+
+.post-list-toc-inner {
+  max-height: calc(100vh - 8rem);
+  overflow: auto;
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: rgba(255,248,237,.72);
+}
+
+.post-list-toc-title {
+  margin-bottom: .65rem;
+  color: var(--accent);
+  font-family: "LXGW WenKai", "Kaiti SC", "STKaiti", var(--font-sans);
+  font-size: .86rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+}
+
+.post-list-toc ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.post-list-toc li {
+  margin: .18rem 0;
+}
+
+.post-list-toc a {
+  display: block;
+  padding: .32rem .38rem;
+  border-radius: 8px;
+  color: var(--muted);
+  font-size: .84rem;
+  line-height: 1.5;
+  text-decoration: none;
+  transition: background .18s, color .18s, transform .18s;
+}
+
+.post-list-toc a:hover {
+  color: var(--accent);
+  background: rgba(255,248,237,.9);
+  text-decoration: none;
+  transform: translateX(2px);
+}
+
 /* ===== About ===== */
 .about-page { padding-top: .5rem; }
 .about-page .page-title { font-size: 1.6rem; font-weight: 700; margin-bottom: 2rem; }
@@ -784,6 +852,16 @@ html[data-color-mode="dark"] .post-toc a:hover {
   background: rgba(210,149,104,.14);
 }
 
+html[data-color-mode="dark"] .post-list-toc-inner {
+  border-color: var(--border);
+  background: rgba(33,26,20,.76);
+}
+
+html[data-color-mode="dark"] .post-list-toc a:hover {
+  color: var(--accent-hover);
+  background: rgba(210,149,104,.14);
+}
+
 @media (max-width: 1080px) {
   body:has(.post-layout) main.container {
     max-width: var(--max-width);
@@ -794,6 +872,21 @@ html[data-color-mode="dark"] .post-toc a:hover {
   }
 
   .post-toc {
+    display: none;
+  }
+}
+
+@media (max-width: 1080px) {
+  body:has(.post-list-layout) main.container,
+  body:has(.post-list-layout) .site-header .container {
+    max-width: var(--max-width);
+  }
+
+  .post-list-layout {
+    display: block;
+  }
+
+  .post-list-toc {
     display: none;
   }
 }

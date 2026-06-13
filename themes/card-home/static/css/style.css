@@ -308,6 +308,74 @@ body:has(.post-layout) .site-header .container {
   transform: translateX(2px);
 }
 
+body:has(.post-list-layout) main.container,
+body:has(.post-list-layout) .site-header .container {
+  max-width: 1160px;
+}
+
+.post-list-layout {
+  display: grid;
+  grid-template-columns: 240px minmax(0, var(--max-width));
+  gap: 2rem;
+  align-items: start;
+  justify-content: center;
+}
+
+.post-list-layout .post-item {
+  scroll-margin-top: 6rem;
+}
+
+.post-list-toc {
+  position: sticky;
+  top: 6rem;
+}
+
+.post-list-toc-inner {
+  max-height: calc(100vh - 8rem);
+  overflow: auto;
+  padding: 1rem;
+  border: 1px solid rgba(221,229,242,.92);
+  border-radius: 20px;
+  background: rgba(255,255,255,.72);
+  box-shadow: 0 14px 36px rgba(15,23,42,.06);
+}
+
+.post-list-toc-title {
+  margin-bottom: .65rem;
+  color: var(--fg);
+  font-size: .82rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+}
+
+.post-list-toc ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.post-list-toc li {
+  margin: .18rem 0;
+}
+
+.post-list-toc a {
+  display: block;
+  padding: .32rem .38rem;
+  border-radius: 8px;
+  color: var(--muted);
+  font-size: .84rem;
+  line-height: 1.45;
+  text-decoration: none;
+  transition: background .18s, color .18s, transform .18s;
+}
+
+.post-list-toc a:hover {
+  color: var(--accent);
+  background: var(--tag-bg);
+  text-decoration: none;
+  transform: translateX(2px);
+}
+
 /* ===== About ===== */
 .about-page { padding-top: .5rem; }
 .about-page .page-title { font-size: 1.6rem; font-weight: 700; margin-bottom: 2rem; }
@@ -782,6 +850,21 @@ html[data-color-mode="dark"] .post-toc a:hover {
   background: rgba(139,140,255,.16);
 }
 
+html[data-color-mode="dark"] .post-list-toc-inner {
+  border-color: rgba(73,86,125,.62);
+  background: rgba(15,23,42,.74);
+  box-shadow: 0 18px 54px rgba(0,0,0,.24);
+}
+
+html[data-color-mode="dark"] .post-list-toc-title {
+  color: var(--fg);
+}
+
+html[data-color-mode="dark"] .post-list-toc a:hover {
+  color: #dfe3ff;
+  background: rgba(139,140,255,.16);
+}
+
 @media (max-width: 1080px) {
   body:has(.post-layout) main.container {
     max-width: var(--max-width);
@@ -792,6 +875,21 @@ html[data-color-mode="dark"] .post-toc a:hover {
   }
 
   .post-toc {
+    display: none;
+  }
+}
+
+@media (max-width: 1080px) {
+  body:has(.post-list-layout) main.container,
+  body:has(.post-list-layout) .site-header .container {
+    max-width: var(--max-width);
+  }
+
+  .post-list-layout {
+    display: block;
+  }
+
+  .post-list-toc {
     display: none;
   }
 }
