@@ -844,6 +844,28 @@ html[data-color-mode="dark"] .post-content th {
   background: var(--code-bg);
 }
 
+html[data-color-mode="dark"] .post-content code {
+  color: #dfe3ff;
+}
+
+html[data-color-mode="dark"] .post-content pre,
+html[data-color-mode="dark"] .post-content .highlight,
+html[data-color-mode="dark"] .post-content .chroma {
+  color: #eef2ff;
+  background: var(--code-bg) !important;
+}
+
+html[data-color-mode="dark"] .post-content pre code {
+  color: inherit;
+  background: transparent !important;
+}
+
+html[data-color-mode="dark"] .post-content .highlight *,
+html[data-color-mode="dark"] .post-content .chroma * {
+  color: inherit !important;
+  background: transparent !important;
+}
+
 html[data-color-mode="dark"] .post-content code,
 html[data-color-mode="dark"] .post-content pre,
 html[data-color-mode="dark"] .post-content img,

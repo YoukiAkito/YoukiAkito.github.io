@@ -45,7 +45,7 @@ blog/
 
 新建文章只需在 `content/posts/` 目录下创建 `.md` 文件，在文件头部写 Front Matter：
 
-```markdown
+```
 ---
 title: "文章标题"
 date: 2026-05-26
