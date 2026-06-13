@@ -1,6 +1,11 @@
 <header class="site-header">
   <div class="container">
     <a href="{{ "/" | absURL }}" class="site-title">{{ .Site.Title }}</a>
+    <button type="button" class="menu-toggle" aria-label="打开菜单" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
     <div class="site-actions">
       <nav class="site-nav">
         {{ range .Site.Menus.main }}
