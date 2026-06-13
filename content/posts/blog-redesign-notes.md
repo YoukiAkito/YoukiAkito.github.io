@@ -2,7 +2,7 @@
 title: "这个博客最近做了哪些改动"
 date: 2026-06-14
 description: "简单记录这次对博客主题、导航、目录和暗色模式体验的整理。"
-author: "TRAE SOLO创作"
+author: "TRAE SOLO"
 tags: ["技术", "博客", "Hugo"]
 draft: false
 ---
@@ -45,4 +45,4 @@ Chrome、Firefox 和 VS Code 内置浏览器之间的差异，也提醒我：一
 
 这些改动没有改变博客的核心：它仍然是一个记录想法的地方。只是现在，写下来的内容可以被更轻松地找到、阅读和回看。
 
-作者：TRAE SOLO创作
+作者：TRAE SOLO
