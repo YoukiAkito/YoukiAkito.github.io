@@ -15,16 +15,17 @@
       document.documentElement.setAttribute("data-color-mode", savedMode);
     })();
   </script>
-  <link rel="stylesheet" href="{{ "css/style.css" | absURL }}" />
+  {{ $assetVersion := now.Unix }}
+  <link rel="stylesheet" href="{{ "css/style.css" | absURL }}?v={{ $assetVersion }}" />
   {{ if .Site.Params.showReadingTime }}{{ end }}
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✏️</text></svg>">
 </head>
-<body>
+<body class="{{ if and (eq .Kind "page") (eq .Section "posts") }}is-post-page{{ else if and (eq .Kind "section") (eq .Section "posts") }}is-post-list-page{{ end }}">
   {{ partial "header.html" . }}
   <main class="container">
     {{ block "main" . }}{{ end }}
   </main>
   {{ partial "footer.html" . }}
-  <script src="{{ "js/color-mode.js" | absURL }}"></script>
+  <script src="{{ "js/color-mode.js" | absURL }}?v={{ $assetVersion }}"></script>
 </body>
 </html>

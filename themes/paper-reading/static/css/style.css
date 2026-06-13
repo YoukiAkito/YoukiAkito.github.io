@@ -226,7 +226,15 @@ main.container { padding-top: 2.5rem; padding-bottom: 4rem; }
 .back-link { font-size: .9rem; color: var(--muted); }
 .back-link:hover { color: var(--accent); }
 
+body.is-post-page main.container {
+  max-width: 1080px;
+}
+
 body:has(.post-layout) main.container {
+  max-width: 1080px;
+}
+
+body.is-post-page .site-header .container {
   max-width: 1080px;
 }
 
@@ -306,6 +314,11 @@ body:has(.post-layout) .site-header .container {
   background: rgba(255,248,237,.9);
   text-decoration: none;
   transform: translateX(2px);
+}
+
+body.is-post-list-page main.container,
+body.is-post-list-page .site-header .container {
+  max-width: 1080px;
 }
 
 body:has(.post-list-layout) main.container,
@@ -430,6 +443,7 @@ body {
   position: relative;
   z-index: 1;
   flex: 0 0 var(--nav-item-width);
+  white-space: nowrap;
   min-height: 1.62rem;
   padding: 0;
   border-radius: 999px;
@@ -575,15 +589,19 @@ main.container {
 .site-actions {
   display: flex;
   align-items: center;
+  flex: 0 0 auto;
   gap: 1rem;
+  min-width: max-content;
   order: 3;
 }
 
 .header-controls {
   display: flex;
   align-items: center;
+  flex: 0 0 auto;
   gap: .55rem;
   margin-left: auto;
+  min-width: max-content;
   order: 2;
 }
 
@@ -617,13 +635,16 @@ main.container {
 }
 
 .site-nav {
-  --nav-item-width: 3.15rem;
+  --nav-item-width: 3.45rem;
+  --nav-width: 11.11rem;
   display: inline-flex;
   align-items: center;
   gap: .18rem;
   position: relative;
   flex: 0 0 auto;
   box-sizing: border-box;
+  width: var(--nav-width);
+  min-width: var(--nav-width);
   overflow: hidden;
   min-height: 2.12rem;
   height: 2.12rem;
@@ -863,6 +884,10 @@ html[data-color-mode="dark"] .post-list-toc a:hover {
 }
 
 @media (max-width: 1080px) {
+  body.is-post-page main.container {
+    max-width: var(--max-width);
+  }
+
   body:has(.post-layout) main.container {
     max-width: var(--max-width);
   }
@@ -877,6 +902,11 @@ html[data-color-mode="dark"] .post-list-toc a:hover {
 }
 
 @media (max-width: 1080px) {
+  body.is-post-list-page main.container,
+  body.is-post-list-page .site-header .container {
+    max-width: var(--max-width);
+  }
+
   body:has(.post-list-layout) main.container,
   body:has(.post-list-layout) .site-header .container {
     max-width: var(--max-width);
@@ -909,6 +939,7 @@ html[data-color-mode="dark"] .post-list-toc a:hover {
     right: 1.25rem;
     z-index: 120;
     width: auto;
+    min-width: 0;
     justify-items: end;
     max-height: 0;
     margin-top: 0;
@@ -951,6 +982,7 @@ html[data-color-mode="dark"] .post-list-toc a:hover {
   .site-nav {
     display: grid;
     width: min(calc(100vw - 2.5rem), 13rem);
+    min-width: 0;
     height: auto;
     justify-self: end;
     gap: .35rem;
