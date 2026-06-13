@@ -2,9 +2,28 @@
   <div class="container">
     <a href="{{ "/" | absURL }}" class="site-title">{{ .Site.Title }}</a>
     <div class="site-actions">
-      <nav class="site-nav">
+      {{ $current := $.RelPermalink }}
+      {{ $activeIndex := 1 }}
+      {{ range $index, $item := .Site.Menus.main }}
+        {{ $isActive := false }}
+        {{ if eq $item.URL "/" }}
+          {{ $isActive = eq $current $item.URL }}
+        {{ else }}
+          {{ $isActive = hasPrefix $current $item.URL }}
+        {{ end }}
+        {{ if $isActive }}
+          {{ $activeIndex = add $index 1 }}
+        {{ end }}
+      {{ end }}
+      <nav class="site-nav" data-active-index="{{ $activeIndex }}">
         {{ range .Site.Menus.main }}
-        <a href="{{ .URL }}" class="{{ if eq $.RelPermalink .URL }}active{{ end }}">{{ .Name }}</a>
+        {{ $isActive := false }}
+        {{ if eq .URL "/" }}
+          {{ $isActive = eq $current .URL }}
+        {{ else }}
+          {{ $isActive = hasPrefix $current .URL }}
+        {{ end }}
+        <a href="{{ .URL }}" class="{{ if $isActive }}active{{ end }}">{{ .Name }}</a>
         {{ end }}
       </nav>
     </div>
